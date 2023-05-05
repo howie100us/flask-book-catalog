@@ -1,0 +1,48 @@
+{% extends "layout.html"%}
+
+{% block content%}
+<h4 class ="form">Add A Book</h4>
+<div class ="container form">
+ <hr>
+ <br>
+
+<form method="post">
+    <div class = "form-group">
+      <label>Name of Book</label>
+<input name="title" type="text" required/>
+    </div>  
+<div class = "form-group">
+<label>Author</label>
+<input name="author" type="text" required/>
+</div>  
+<div class = "form-group">
+<label>Ratings</label>
+<input name="avg_rating" type="text" required/>
+</div>  
+
+<div class = "form-group">
+  <label>Book Format</label>
+   <input name="format"  type="text"  required/>
+</div> 
+
+<div class = "form-group">
+    <label>Image Path</label>
+    <input name="image_path" type="text" required/>
+  </div> 
+
+<div class = "form-group">
+  <label>Number of pages</label>
+  <input name="num_pages" type="number" required/>
+</div>  
+
+<div class = "form-group">
+    <label>Publisher ID</label>
+    <input name="pub_id" type="number" required/>
+  </div>  
+ 
+  <div class = "btn-align">
+    <button class = "class='btn btn-primary" type="submit">Add</button>
+</div>  
+</form>
+
+{% endblock content %}

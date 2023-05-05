@@ -1,0 +1,33 @@
+{% extends "layout.html"%}
+
+ <head>
+    <title>
+      Books Inc  
+    </title>
+    <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>
+    <link rel="stylesheet" href ="{{url_for("static",filename ="bootstrap.min.css")}}">
+    <link rel="stylesheet" href ="{{url_for("static",filename ="bootstrap.css")}}">
+  </head>
+{% block content %}
+<div class ="container book">
+  <div class ="row">
+
+{%for book in books%}
+<div class ="col-md-4">
+<img src = "static/img/{{book.image_path}}" alt ="book-img" height ="200" width = "190" class="img-rounded">
+<p>Book Title : {{book.title}}</p>
+<p>Author {{book.author}}</p>
+<p>Format :{{book.format}}</p>
+<p>Rating out of 5: {{book.avg_rating}}</p>
+<p>Number of pages: {{book.num_pages}}</p>
+<!-- add route name -->
+<p><a href = "{{url_for("main.displayPubId", publish_id = book.pub_id)}}">Publisher Id: {{book.pub_id}}</a></p>
+<spam class = "label label-primary"> <a href ="{{ url_for("main.editBook",book_id = book.id,)}}" style="color:white">Edit</a></spam>
+<spam class = "label label-info"> <a href ="{{ url_for("main.deleteBook",book_id = book.id,)}}" style="color:red">Delete</a></spam>
+<br>
+</div>
+{%endfor%}
+</div>
+</div>
+
+{% endblock%}

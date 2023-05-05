@@ -1,0 +1,22 @@
+{% extends "layout.html"%}
+ <head>
+    <title>
+      Title
+    </title>
+    <link rel=”stylesheet” href=”https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css”rel=”nofollow” integrity=”sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I” crossorigin=”anonymous”>
+    <link rel="stylesheet" href ="{{url_for("static",filename ="css/bootstrap.min.css")}}">
+    <link rel="stylesheet" href ="{{url_for("static",filename ="css/bootstrap.css")}}">
+ </head>
+ {% block content %}
+ <div class = "container publisher">
+<h4>Published By:{{publisher.name}}</h4>
+
+<ol>
+
+{% for book in publisher_books %}
+<li type = "1">{{book.title}} by :{{book.author}}</li>
+
+{%endfor%}
+</ol>    
+</div>
+{%endblock%}

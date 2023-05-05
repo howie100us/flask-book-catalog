@@ -1,0 +1,30 @@
+{% extends "layout.html"%}
+
+{% block content%}
+<h4 class ="form">Registration</h4>
+<div class ="container form">
+ <hr>
+ <br>
+<form method="post">
+    <div class = "form-group">
+      <label>User Name</label>
+<input name="name"  pattern=".{3,15}" required title="3 to 15 characters"/>
+</div>   
+<div class = "form-group">
+  <label>Email</label>
+   <input name="email" type ="email" required/>
+</div> 
+<div class = "form-group">
+  <label>Password</label>
+  <input name="password"  type = "password" required/>
+</div>   
+<div class = "form-group">
+  <label>Confirmation</label>
+   <input name="cfmpassword" type = "password" required/>
+</div> 
+  <div class = "btn-align">
+    <button class = "class='btn btn-primary" type="submit">Submit</button>
+</div>  
+</form>
+
+{% endblock content %}
